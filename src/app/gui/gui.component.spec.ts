@@ -4,87 +4,6 @@ import { By } from '@angular/platform-browser';
 import { addition } from '../addition/addition';
 import { GuiComponent } from './gui.component';
 
-// describe('GuiComponent', () => {
-//   let component: GuiComponent;
-//   let fixture: ComponentFixture<GuiComponent>;
-
-//   beforeEach(async () => {
-//     await TestBed.configureTestingModule({
-//       declarations: [ GuiComponent ]
-//     })
-//     .compileComponents();
-//   });
-
-//   beforeEach(() => {
-//     fixture = TestBed.createComponent(GuiComponent);
-//     component = fixture.componentInstance;
-//     fixture.detectChanges();
-//   });
-
-//   it('should create', () => {
-//     expect(component).toBeTruthy();
-//   });
-// });
-
-// describe('GUI - Addition implementation',()=>{
-//   it('should call addition method',()=> {
-
-//   });
-//   it('should render addition in txtResult',()=>{
-
-//   });
-// });
-
-// describe('GUI - Substraction implementation',()=>{
-//   it('should call Substraction method',()=> {
-
-//   });
-//   it('should render Substraction in txtResult',()=>{
-
-//   });
-// });
-
-// describe('GUI - Multiplication implementation',()=>{
-//   it('should call Multiplication method',()=> {
-
-//   });
-//   it('should render Multiplication in txtResult',()=>{
-
-//   });
-// });
-// describe('GUI - Division implementation',()=>{
-//   it('should call Division method',()=> {
-
-//   });
-//   it('should render Division in txtResult',()=>{
-
-//   });
-// });
-// describe('GUI - Exp implementation',()=>{
-//   it('should call Exp method',()=> {
-
-//   });
-//   it('should render Exp in txtResult',()=>{
-
-//   });
-// });
-// describe('GUI - Sqr implementation',()=>{
-//   it('should call Sqr method',()=> {
-
-//   });
-//   it('should render Sqr in txtResult',()=>{
-
-//   });
-// });
-// describe('GUI - Sqrt implementation',()=>{
-//   it('should call Sqrt method',()=> {
-
-//   });
-//   it('should render Sqrt in txtResult',()=>{
-
-//   });
-// });
-
 describe('GUI Addition - Component', () => {
     let component: GuiComponent;
     let fixture: ComponentFixture<GuiComponent>;
@@ -115,6 +34,38 @@ describe('GUI Addition - Component', () => {
         // Assert
         expect(result).toBe(5);
     });
+
+    it('Should set operator1 model through ngModel', async () => {
+        // Arrange 
+        await fixture.whenStable();
+        fixture.detectChanges();
+        const inputElement = fixture.debugElement.query(By.css('input[name="operator1"]')).nativeElement;
+
+        // Act 
+        inputElement.value = '3.1416';
+        inputElement.dispatchEvent(new Event('input'));
+        fixture.detectChanges();
+
+        // Assert 
+        expect(component.operator1).toEqual(3.1416);
+    });
+
+    it('Should set operator2 model through ngModel', async () => {
+        // Arrange 
+        await fixture.whenStable();
+        fixture.detectChanges();
+        const inputElement = fixture.debugElement.query(By.css('input[name="operator2"]')).nativeElement;
+
+        // Act 
+        inputElement.value = '2.71';
+        inputElement.dispatchEvent(new Event('input'));
+        fixture.detectChanges();
+
+        // Assert 
+        expect(component.operator2).toEqual(2.71);
+    });
+
+
     xit('should add operator1 and operator2 when i click the addition button ', () => {
         // Arrange 
         component.operator1 = 5.0;
