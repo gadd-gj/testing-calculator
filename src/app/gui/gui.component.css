@@ -1,0 +1,44 @@
+
+h1{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    text-align: center;
+  }
+  .container{
+    margin: 0 auto;
+    padding: 10px 50px;
+    max-width: 50%;
+  }
+  .calculator {
+    width: 150px;
+    text-align: center;
+    color: #999;
+    }
+  
+    .result {
+    font-size: 3.0em;
+    font-weight: bold;
+    color: red;
+  
+    }
+  
+    .operator1 {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: black;
+  
+    }
+  
+    .operator2 {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: blue;
+  
+    }
+    .addition-button {
+    cursor: pointer;
+    color: blue;
+    }
+    .substraction-button {
+    cursor: pointer;
+    color: green;
+    }
