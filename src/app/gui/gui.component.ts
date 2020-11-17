@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { addition } from '../addition/addition';
+import { substraction } from "../substraction/substraction";
+import { division } from "../division/division";
+import { multiplication } from "../multiplication/multiplication";
 
 @Component({
   selector: 'app-gui',
@@ -22,10 +25,22 @@ export class GuiComponent implements OnInit {
     let myresult = 0;
     myresult = addition(this.operator1, this.operator2);
     this.result = myresult;
-    }
+  }
 
-    substraction() {
-    alert("substraction here !");
-    } 
+  substraction() {
+    let myresult = 0;
+    myresult = substraction(this.operator1, this.operator2);
+    this.result = myresult;
+  }
+  multiplication() {
+    let myresult = 0;
+    myresult = multiplication(this.operator1, this.operator2);
+    this.result = myresult;
+  }
+  division() {
+    let myresult = 0;
+    myresult = division(this.operator1, this.operator2);
+    this.result = myresult;
+  }
 
 }
